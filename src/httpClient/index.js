@@ -7,3 +7,11 @@ export const getTrendMovies = () => {
     return resp.json();
   });
 };
+
+export const getMovieDetails = movieId => {
+  return fetch(
+    `${config.baseUrl}/movie/${movieId}?api_key=${config.apiKey}`
+  ).then(resp => {
+    return resp.json();
+  });
+};
