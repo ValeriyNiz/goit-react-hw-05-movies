@@ -1,12 +1,13 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useNavigate, useParams } from 'react-router-dom';
 import style from './MovieDetails.module.css';
 import { getMovieDetails } from 'httpClient';
 import { IMAGE_URL } from 'constants';
 
 const MovieDetails = props => {
   const [movieDetails, setMovieDetails] = useState(null);
+  const navigate = useNavigate();
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -19,10 +20,14 @@ const MovieDetails = props => {
     return movieDetails?.genres.map(genre => genre.name).join(', ');
   }, [movieDetails]);
 
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return movieDetails ? (
     <div>
       <div>
-        <button>Go back</button>
+        <button onClick={goBack}>Go back</button>
       </div>
       <div className={style.movieDetails}>
         <div>
@@ -45,6 +50,7 @@ const MovieDetails = props => {
       <hr />
       <Link to="reviews">Reviews</Link>
       <Link to="cast">Cast</Link>
+      <hr />
       <Outlet />
     </div>
   ) : (

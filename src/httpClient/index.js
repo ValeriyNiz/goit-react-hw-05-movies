@@ -15,3 +15,19 @@ export const getMovieDetails = movieId => {
     return resp.json();
   });
 };
+
+export const getCast = movieId => {
+  return fetch(
+    `${config.baseUrl}/movie/${movieId}/credits?api_key=${config.apiKey}`
+  ).then(resp => {
+    return resp.json();
+  });
+};
+
+export const getReviews = movieId => {
+  return fetch(
+    `${config.baseUrl}/movie/${movieId}/reviews?api_key=${config.apiKey}`
+  ).then(resp => {
+    return resp.json();
+  });
+};
