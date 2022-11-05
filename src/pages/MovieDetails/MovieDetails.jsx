@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Link, Outlet, useNavigate, useParams } from 'react-router-dom';
 import style from './MovieDetails.module.css';
 import { getMovieDetails } from 'httpClient';
@@ -25,31 +25,39 @@ const MovieDetails = props => {
   };
 
   return movieDetails ? (
-    <div>
+    <div className={style.movieDetailsSection}>
+      <hr />
       <div>
-        <button onClick={goBack}>Go back</button>
+        <button className={style.movieDetailsBtn} onClick={goBack}>
+          {' '}
+          Go back
+        </button>
       </div>
       <div className={style.movieDetails}>
-        <div>
+        <div className={style.movieDetailsPoster}>
           <img
             alt=""
-            width="300"
-            height="450"
+            width="230"
+            height="350"
             src={`${IMAGE_URL}/w300${movieDetails.poster_path}`}
           />
         </div>
         <div>
-          <h1>{movieDetails.title}</h1>
+          <h1 className={style.movieDetailsTitle}>{movieDetails.title}</h1>
           <p>User score: {movieDetails.vote_average.toFixed(1)}</p>
-          <h2>Overview</h2>
+          <h2 className={style.movieDetailsTitle}>Overview</h2>
           <p>{movieDetails.overview}</p>
-          <h3>Genres</h3>
+          <h3 className={style.movieDetailsTitle}>Genres</h3>
           <p>{genres}</p>
         </div>
       </div>
       <hr />
-      <Link to="reviews">Reviews</Link>
-      <Link to="cast">Cast</Link>
+      <Link className={style.movieDetailsLink} to="reviews">
+        <b>Reviews</b>
+      </Link>
+      <Link className={style.movieDetailsLink} to="cast">
+        <b>Cast</b>
+      </Link>
       <hr />
       <Outlet />
     </div>
@@ -58,6 +66,6 @@ const MovieDetails = props => {
   );
 };
 
-MovieDetails.propTypes = {};
+// MovieDetails.propTypes = {};
 
 export default MovieDetails;

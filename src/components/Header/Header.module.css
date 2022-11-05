@@ -1,0 +1,21 @@
+.header {
+  margin-left: 10px;
+}
+
+.headerList {
+  display: flex;
+}
+
+.headerNav {
+  text-decoration: none;
+  color: black;
+}
+
+.headerNav:hover,
+.headerNav:focus {
+  color: brown;
+}
+
+.headerItem {
+  margin-right: 10px;
+}

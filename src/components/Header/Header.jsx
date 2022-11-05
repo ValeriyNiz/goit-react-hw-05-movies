@@ -1,19 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import style from './Header.module.css';
 
 const Header = props => {
   return (
-    <header>
+    <header className={style.header}>
       <nav>
-        <ul>
-          <li>
-            <NavLink to="/" end>
-              Home
+        <ul className={style.headerList}>
+          <li className={style.headerItem}>
+            <NavLink className={style.headerNav} to="/" end>
+              <b>Home</b>
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/movies">Movies</NavLink>
+          <li className={style.headerItem}>
+            <NavLink className={style.headerNav} to="/movies">
+              <b>Movies</b>
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -21,6 +24,6 @@ const Header = props => {
   );
 };
 
-Header.propTypes = {};
+// Header.propTypes = {};
 
 export default Header;

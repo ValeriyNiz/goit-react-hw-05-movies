@@ -1,9 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+// import PropTypes from 'prop-types';
 import MovieList from 'components/MovieList/MovieList';
-import { useEffect } from 'react';
 import { getTrendMovies } from 'httpClient';
-import { useState } from 'react';
+import style from './Home.module.css';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -15,13 +14,14 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Header</h1>
+    <div className={style.home}>
+      <hr />
+      <h1 className={style.homeTitle}>Trending today</h1>
       <MovieList movieList={movies} />
     </div>
   );
 };
 
-Home.propTypes = {};
+// Home.propTypes = {};
 
 export default Home;

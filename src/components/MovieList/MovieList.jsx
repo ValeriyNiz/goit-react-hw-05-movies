@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const MovieList = ({ movieList }) => {
@@ -16,6 +16,6 @@ const MovieList = ({ movieList }) => {
   );
 };
 
-MovieList.propTypes = {};
+// MovieList.propTypes = {};
 
 export default MovieList;

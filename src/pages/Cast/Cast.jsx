@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+// import PropTypes from 'prop-types';
 import { getCast } from 'httpClient';
 import { useParams } from 'react-router-dom';
 import { IMAGE_URL } from 'constants';
+import style from './Cast.module.css';
 
 const Cast = props => {
   const { movieId } = useParams();
@@ -19,8 +19,8 @@ const Cast = props => {
     <ul>
       {cast.map(actor => {
         return (
-          <li key={actor.id}>
-            <div>
+          <li className={style.castItem} key={actor.id}>
+            <div className={style.castItemDiv}>
               <img
                 src={
                   actor.profile_path
@@ -30,7 +30,7 @@ const Cast = props => {
                 alt={actor.name}
               />
             </div>
-            <p>{actor.name}</p>
+            <p className={style.castItemText}>{actor.name}</p>
             <p>Character: {actor.character}</p>
           </li>
         );
@@ -41,6 +41,6 @@ const Cast = props => {
   );
 };
 
-Cast.propTypes = {};
+// Cast.propTypes = {};
 
 export default Cast;

@@ -1,3 +1,40 @@
+.movieDetailsSection {
+  margin-left: 10px;
+}
+
 .movieDetails {
   display: flex;
+}
+
+.movieDetailsBtn {
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.movieDetailsBtn:hover,
+.movieDetailsBtn:focus {
+  color: brown;
+  background-color: lightgray;
+}
+
+.movieDetailsTitle {
+  margin: 10px 0;
+}
+
+.movieDetailsPoster {
+  margin-right: 10px;
+}
+
+.movieDetailsLink {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.movieDetailsLink:hover,
+.movieDetailsLink:focus {
+  color: brown;
 }
