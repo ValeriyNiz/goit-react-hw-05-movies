@@ -3,7 +3,6 @@ import { Link, Outlet, useNavigate, useParams } from 'react-router-dom';
 import style from './MovieDetails.module.css';
 import { getMovieDetails } from 'httpClient';
 import { IMAGE_URL } from 'constants';
-import { FidgetSpinner } from 'react-loader-spinner';
 import { Loader } from 'components/Loader/Loader';
 
 const MovieDetails = () => {
