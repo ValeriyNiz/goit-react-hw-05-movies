@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/866.e2f51114.chunk.css","mappings":"AAAA,6BAGE,cAAe,CADf,iBAAkB,CADlB,eAGF","sources":["pages/Reviews/Reviews.module.css"],"sourcesContent":[".reviewsTitle {\n  margin-top: 20px;\n  margin-bottom: 5px;\n  font-size: 15px;\n}\n"],"names":[],"sourceRoot":""}
