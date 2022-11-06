@@ -1,11 +1,12 @@
-import React, { useState, useMemo, useEffect } from 'react';
-// import PropTypes from 'prop-types';
+import React, { useState, useMemo, useEffect, Suspense } from 'react';
 import { Link, Outlet, useNavigate, useParams } from 'react-router-dom';
 import style from './MovieDetails.module.css';
 import { getMovieDetails } from 'httpClient';
 import { IMAGE_URL } from 'constants';
+import { FidgetSpinner } from 'react-loader-spinner';
+import { Loader } from 'components/Loader/Loader';
 
-const MovieDetails = props => {
+const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const navigate = useNavigate();
   const { movieId } = useParams();
@@ -29,7 +30,6 @@ const MovieDetails = props => {
       <hr />
       <div>
         <button className={style.movieDetailsBtn} onClick={goBack}>
-          {' '}
           Go back
         </button>
       </div>
@@ -59,13 +59,14 @@ const MovieDetails = props => {
         <b>Cast</b>
       </Link>
       <hr />
-      <Outlet />
+
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   ) : (
-    <span>Loading...</span>
+    <Loader />
   );
 };
-
-// MovieDetails.propTypes = {};
 
 export default MovieDetails;

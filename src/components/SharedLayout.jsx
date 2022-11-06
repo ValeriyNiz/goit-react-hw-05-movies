@@ -1,19 +1,19 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
+import React, { Suspense } from 'react';
 import Header from './Header/Header';
 import { Outlet } from 'react-router-dom';
+import { Loader } from './Loader/Loader';
 
-const SharedLayout = props => {
+const SharedLayout = () => {
   return (
     <div className="app">
       <Header />
       <main>
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </main>
     </div>
   );
 };
-
-// SharedLayout.propTypes = {};
 
 export default SharedLayout;

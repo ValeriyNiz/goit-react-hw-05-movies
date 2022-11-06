@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const MovieList = ({ movieList }) => {
@@ -8,7 +8,7 @@ const MovieList = ({ movieList }) => {
       {movieList.map(movie => {
         return (
           <li key={movie.id}>
-            <Link to={`movies/${movie.id}`}>{movie.title}</Link>
+            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
           </li>
         );
       })}
@@ -16,6 +16,8 @@ const MovieList = ({ movieList }) => {
   );
 };
 
-// MovieList.propTypes = {};
+MovieList.propTypes = {
+  movieList: PropTypes.array.isRequired,
+};
 
 export default MovieList;

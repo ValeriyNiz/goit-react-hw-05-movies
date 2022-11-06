@@ -12,7 +12,8 @@
 }
 
 .headerNav:hover,
-.headerNav:focus {
+.headerNav:focus,
+.headerNav.active {
   color: brown;
 }
 

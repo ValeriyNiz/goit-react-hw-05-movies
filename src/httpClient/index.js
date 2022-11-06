@@ -31,3 +31,11 @@ export const getReviews = movieId => {
     return resp.json();
   });
 };
+
+export const getSearchMovieResults = text => {
+  return fetch(
+    `${config.baseUrl}/search/movie?api_key=${config.apiKey}&query=${text}`
+  ).then(resp => {
+    return resp.json();
+  });
+};

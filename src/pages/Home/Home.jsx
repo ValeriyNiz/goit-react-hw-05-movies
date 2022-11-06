@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import PropTypes from 'prop-types';
 import MovieList from 'components/MovieList/MovieList';
 import { getTrendMovies } from 'httpClient';
 import style from './Home.module.css';
@@ -21,7 +20,5 @@ const Home = () => {
     </div>
   );
 };
-
-// Home.propTypes = {};
 
 export default Home;

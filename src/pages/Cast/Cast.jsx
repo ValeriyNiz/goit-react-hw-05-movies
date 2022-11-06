@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { IMAGE_URL } from 'constants';
 import style from './Cast.module.css';
 
-const Cast = props => {
+const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState(null);
 
@@ -40,7 +40,5 @@ const Cast = props => {
     <p>No information</p>
   );
 };
-
-// Cast.propTypes = {};
 
 export default Cast;
