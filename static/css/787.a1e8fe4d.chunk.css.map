@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/787.a1e8fe4d.chunk.css","mappings":"AAAA,2BACE,kBACF,CAMA,6DACE,kBACF","sources":["components/ActorList/ActorList.module.css"],"sourcesContent":[".castItem {\n  margin-bottom: 20px;\n}\n\n.castItemDiv {\n  margin-bottom: 10px;\n}\n\n.castItemText {\n  margin-bottom: 10px;\n}\n"],"names":[],"sourceRoot":""}
