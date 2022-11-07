@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getReviews } from 'httpClient';
 import { useParams } from 'react-router-dom';
-import style from './Reviews.module.css';
+import ReviewList from 'components/ReviewList/ReviewList';
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -15,16 +15,7 @@ const Reviews = () => {
 
   const renderReviews = () => {
     return reviews.length ? (
-      <ul>
-        {reviews.map(review => {
-          return (
-            <li key={review.id}>
-              <h5 className={style.reviewsTitle}>Author: {review.author}</h5>
-              <p>{review.content}</p>
-            </li>
-          );
-        })}
-      </ul>
+      <ReviewList reviews={reviews} />
     ) : (
       <p>No reviews</p>
     );

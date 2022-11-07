@@ -51,10 +51,10 @@ const MovieDetails = () => {
         </div>
       </div>
       <hr />
-      <Link className={style.movieDetailsLink} to="reviews">
+      <Link className={style.movieDetailsLink} replace to="reviews">
         <b>Reviews</b>
       </Link>
-      <Link className={style.movieDetailsLink} to="cast">
+      <Link className={style.movieDetailsLink} replace to="cast">
         <b>Cast</b>
       </Link>
       <hr />
